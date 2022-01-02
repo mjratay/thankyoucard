@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you!</title>
+    <link rel="stylesheet" href="cssfile.css" type="text/css">
+</head>
+<body>
+<header>
+    A Gift From Me To You
+</header>
+<nav>
+    Click on the lid to open the box!
+</nav>
+<section>
+    <div id="animate">
+        <img width=507 src="gift-top.png">
+    </div>
+    <div id="box">
+        <img width=489 src="gift-bottom.png">
+    </div>
+    <div id="panda">
+        <img width=200 src="panda.png">
+    </div>
+    <div id="thank">
+        <img width=300 src="thankyou.png">
+    </div>
+</section>
+</body>
+<script>
+    let animation = document.getElementById("animate");
+
+    animation.style.cursor = 'pointer';
+    animation.onclick = function myMove() {
+        let id = null;
+        const elem = document.getElementById("animate");
+        const elem2 = document.getElementById("thank")
+        let pos = elem.style.top;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame() {
+            if (pos == -231) {
+                clearInterval(id);
+                elem2.style.visibility = "visible";
+            } else {
+                pos--;
+                elem.style.top = pos + 'px';
+            }
+        }
+    }
+</script>
+</html>
